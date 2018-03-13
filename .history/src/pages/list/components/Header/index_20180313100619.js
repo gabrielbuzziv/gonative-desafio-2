@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import api from 'services/api';
 
 import { View, TextInput, TouchableOpacity, AsyncStorage } from 'react-native';
@@ -8,10 +7,6 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 
 export default class Header extends Component {
-  static propTypes = {
-    loadRepositories: PropTypes.func.isRequired,
-  };
-
   state = {
     repository: '',
   };
@@ -29,7 +24,7 @@ export default class Header extends Component {
     repositories = [...repositories, newRepository];
 
     await AsyncStorage.setItem('@Github:repositories', JSON.stringify(repositories));
-    this.props.loadRepositories();
+    this.loadRepositories();
     this.setState({ repository: '' });
   };
 

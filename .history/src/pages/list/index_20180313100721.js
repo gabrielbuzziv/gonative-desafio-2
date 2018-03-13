@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { View, AsyncStorage, ActivityIndicator, FlatList, StatusBar } from 'react-native';
+import { View, Text, AsyncStorage, ActivityIndicator, FlatList, StatusBar } from 'react-native';
 
 import Header from './components/Header';
 import RepositoryItem from './components/RepositoryItem';
